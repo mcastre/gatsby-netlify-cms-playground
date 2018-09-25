@@ -8,11 +8,12 @@ const StyledNavbar = styled.nav`
   flex: 1;
   justify-content: flex-end;
   a:not(:first-child) {
-    margin-left: 1rem;
+    margin-left: 3rem;
   }
   @media (max-width: ${props => props.theme.breakpoints.sm}) {
     order: 2;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin: 1rem 0;
   }
 `;
 
@@ -30,6 +31,9 @@ const Navbar = () => (
     </Link>
     <Link to='/products' activeClassName={css`${active};`}>
       Ideas
+    </Link>
+    <Link to='/products' activeClassName={css`${active};`}>
+      Contact
     </Link>
   </StyledNavbar>
 );

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'react-emotion';
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
@@ -15,6 +16,26 @@ injectGlobal`
   }
 `;
 
+const StyledContextWrapper = styled.main`
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 1;
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    margin-top: 1rem;
+    padding: 1rem;
+    h1 {
+      text-align: center;
+    }
+  }
+`;
+
+const ContentWrapper = ({children}) => (
+  <StyledContextWrapper>
+    <h1>Latest Ideas</h1>
+    {children}
+  </StyledContextWrapper>
+);
+
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
@@ -22,37 +43,31 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-            </div>
-            {posts
-              .map(({ node: post }) => (
-                <div
-                  className="content"
-                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                  key={post.id}
-                >
-                  <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
+        <ContentWrapper>
+          {posts
+            .map(({ node: post }) => (
+              <div
+                className="content"
+                style={{ border: '1px solid #eaecee', padding: '2rem', borderRadius: '1rem' }}
+                key={post.id}>
+                <p>
+                  <Link className="has-text-primary" to={post.fields.slug}>
+                    {post.frontmatter.title}
+                  </Link>
+                  <span> &bull; </span>
+                  <small>{post.frontmatter.date}</small>
+                </p>
+                <p>
+                  {post.excerpt}
+                  <br />
+                  <br />
+                  <Link className="button is-small" to={post.fields.slug}>
+                    Keep Reading →
                     </Link>
-                    <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <p>
-                    {post.excerpt}
-                    <br />
-                    <br />
-                    <Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
-                    </Link>
-                  </p>
-                </div>
-              ))}
-          </div>
-        </section>
+                </p>
+              </div>
+            ))}
+        </ContentWrapper>
       </Layout>
     )
   }

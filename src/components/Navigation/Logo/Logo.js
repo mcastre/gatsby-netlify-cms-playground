@@ -10,18 +10,14 @@ const StyledLogo = styled.div`
     align-items: center;
     font-weight: 700;
     font-size: 1.3rem;
-    color: ${props => props.theme.colors.darkGrey};
+    color: ${props => props.theme.colors.darkGrey} !important;
     transition: ${props => props.theme.utils.transitionAll};
     &:hover, &:focus {
-      color: ${props => props.theme.brand.purple};
+      color: ${props => props.theme.brand.purple} !important;
       text-decoration: none !important;
       svg {
         transform: scale(1);
       }
-    }
-    @media (max-width: ${props => props.theme.breakpoints.sm}) {
-      font-size: 1.05rem;
-      color: ${props => props.theme.colors.darkGrey};
     }
     svg {
       margin-right: 1rem;
