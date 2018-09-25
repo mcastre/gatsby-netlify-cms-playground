@@ -10,7 +10,7 @@ const Wrapper = styled.header`
   padding: 1.5rem 2rem;
   z-index: 1;
   a {
-    color: white;
+    color: ${props => props.theme.colors.linkBlue};
     text-decoration: none;
     transition: ${props => props.theme.utils.transitionAll};
     &:hover {
@@ -22,7 +22,6 @@ const Wrapper = styled.header`
     padding-bottom: 0;
     flex-wrap: none;
     flex-direction: column;
-    background: #A856FD;
   }
 `;
 
