@@ -10,11 +10,11 @@ const Wrapper = styled.header`
   padding: 1.5rem 2rem;
   z-index: 1;
   a {
-    color: ${props => props.theme.colors.linkBlue};
+    color: ${props => props.theme.colors.lightGrey};
     text-decoration: none;
     transition: ${props => props.theme.utils.transitionAll};
     &:hover {
-      text-decoration: underline;
+      color: ${props => props.theme.colors.darkGrey};
     }
   }
   @media (max-width: ${props => props.theme.breakpoints.sm}) {
