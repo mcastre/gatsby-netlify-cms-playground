@@ -1,9 +1,13 @@
 import { darken } from 'polished';
 
 const brand = {
-  purple: '#CB42F1',
+  purple: '#A729DE',
   blue: '#3AA6EF',
-  teal: '#50E3C2'
+  teal: '#50E3C2',
+  cyan: '#2CC7FD',
+  green: '#73DD6E',
+  yellow: '#FFE057',
+  magenta: '#F340AE'
 };
 
 const colors = {

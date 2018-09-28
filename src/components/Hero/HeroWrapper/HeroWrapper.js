@@ -9,31 +9,46 @@ const StyledHeroWrapper = styled.section`
   display: flex;
   justify-content: space-between;
   .column-one {
-    flex: 0 1 60vw;
+    flex: 0 1 70vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
   }
   .column-two {
-    flex: 1 0 40vw;
+    flex: 1 0 30vw;
     height: 100vh;
-    background: ${props => props.theme.brand.purple};
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 `;
 
 const StyledAvatarWrapper = styled.div`
   display: flex;
+  background: ${props => props.theme.brand.purple};
   margin: 0 auto;
-  width: 100px;
-  height: 100px;
-  margin-top: 50%;
-  transform: translateY(-50%);
-  img {
-    width: 100%;
-    margin-bottom: 0;
-  }
+  width: 100%;
+  height: 100%;
+`;
+const StyledAvatarWrapper2 = styled.div`
+  display: flex;
+  background: ${props => props.theme.brand.magenta};
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+`;
+const StyledAvatarWrapper3 = styled.div`
+  display: flex;
+  background: ${props => props.theme.brand.yellow};
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+`;
+const StyledAvatarWrapper4 = styled.div`
+  display: flex;
+  background: ${props => props.theme.brand.cyan};
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
 `;
 
 const HeroWrapper = ({ children }) => (
@@ -41,13 +56,13 @@ const HeroWrapper = ({ children }) => (
     <section className='column-one'>
       <Nav />
       <HeroMessage></HeroMessage>
-      <ColumnFooter></ColumnFooter>
     </section>
     <section className='column-two'>
-      <StyledAvatarWrapper>
-        <img src={avatar} alt='avatar'></img>
-      </StyledAvatarWrapper>
-      <ColumnFooter></ColumnFooter>
+      <StyledAvatarWrapper></StyledAvatarWrapper>
+      <StyledAvatarWrapper2></StyledAvatarWrapper2>
+      <StyledAvatarWrapper3></StyledAvatarWrapper3>
+      <StyledAvatarWrapper4></StyledAvatarWrapper4>
+
       {
         //children goes here
       }
